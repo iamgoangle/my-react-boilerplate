@@ -28,7 +28,11 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 module.exports = {
     devtool: 'source-map',
     entry: {
-        dev: ENTRY_DIR
+        'app': [
+            'babel-polyfill',
+            'react-hot-loader/patch',
+            './src/index'
+        ]
     },
     devServer: {
         port: 3000

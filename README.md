@@ -4,7 +4,7 @@
 This is a starter kit for first project with React.
 
 ### Why I created my own starter kit?
-I found the several good repositories for React, but they cannot fulfill for what I wants.
+I found the several repositories for React, In my point of view those repo are good, but they cannot fulfill for what I wants.
 some repository it too old version, no one supports it and it's so complicated to start since they have many cli and helper in thier project.
 
 ### What this starter kit will provide you?
@@ -19,6 +19,14 @@ const myReact: Array<string> = [
   'axios',
   'express',
   'couchDB',
-  'mongoDB'
+  'mongoDB',
+  'ESlint'
 ];
 ```
+
+### Progress
+Working on progress
+
+### CLI
+## development
+```npm run dev```
