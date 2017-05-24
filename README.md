@@ -9,18 +9,28 @@ some repository it too old version, no one supports it and it's so complicated t
 
 ### What this starter kit will provide you?
 ```javascript
-const myReact: Array<string> = [
+const client: Array<string> = [
   'react',
   'redux'
-  'webpack',
-  'gulp',
-  'enzyme',
-  'react-story-book',
-  'axios',
+];
+
+const server: Array<string> = [
   'express',
-  'couchDB',
   'mongoDB',
-  'ESlint'
+  'couchDB',
+];
+
+const test: Array<string> = [
+  'enzyme'
+];
+
+const dev: Array<string> = [
+  'gulp',
+  'webpack',
+  'webpack-dev-server',
+  'react-story-book',
+  'es-lint',
+  'es-script'
 ];
 ```
 
