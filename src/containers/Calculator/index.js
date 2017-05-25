@@ -1,23 +1,29 @@
+// react
 import React, { Component, PropTypes } from 'react';
 import { render } from 'react-dom';
 
+// redux
 import { connect } from 'react-redux';
+
+// component imports
+
+// scss imports
+import calculator from './styles.scss';
 
 class Calculator extends Component {
     constructor (props) {
         super(props);
         this.state = {};
-    }
-
-    handleClickButton (iObj = {}) {
-
+        console.log(calculator);
     }
     
+    // mount
     render () {
-        <Box>
-            <DisplaySymbol data={this.state.data}></DisplaySymbol>
-            <Buttons buttonSet={this.state.buttonSet} onClickButton={this.handleClickButton(iObj = {})}></Buttons>
-        </Box>
+        return (
+            <div className={calculator.red}>
+                test
+            </div>
+        )
     }
 
 }

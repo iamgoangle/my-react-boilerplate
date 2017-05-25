@@ -1,14 +1,12 @@
+// react import
 import React, { Component, PropTypes } from 'react';
 
-// import component of layout container...
-
-// import scss
-
-
-// import action
+// redux imports
 import { getDemoAction } from '../actions/myActions';
-
 import { connect } from 'react-redux';
+
+// component imports
+import Calculator from './Calculator';
 
 class App extends Component {
     constructor (props) {
@@ -21,7 +19,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>golf test</div>
+            <Calculator></Calculator>
         )
     }
 }

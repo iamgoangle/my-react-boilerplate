@@ -50,33 +50,44 @@ module.exports = {
     },
     plugins: [HtmlWebpackPluginConfig],
     module: {
-        loaders: [{
-            test: /\.(js)$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader'
-        }, {
-            test: /\.(jsx)$/,
-            exclude: /node_modules/,
-            // cacheDirectory: true,
-            loader: 'babel-loader'
-        }, {
-            test: /\.scss$/,
-            loaders: ['style', 'css', 'sass']
-        }, {
-            test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-            loader: 'file-loader?mimetype=image/svg+xml'
-        }, {
-            test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-            loader: "file-loader?mimetype=application/font-woff"
-        }, {
-            test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-            loader: "file-loader?mimetype=application/font-woff"
-        }, {
-            test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-            loader: "file-loader?mimetype=application/octet-stream"
-        }, {
-            test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-            loader: "file-loader"
-        }]
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader'
+            }, {
+                test: /\.jsx$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader'
+            }, {
+                test: /\.scss$/,
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings
+                }, {
+                    loader: "css-loader",
+                    query: {
+                        modules: true,
+                        localIdentName: '[name]__[local]___[hash:base64:5]'
+                    }
+                }, {
+                    loader: "sass-loader" // compiles Sass to CSS
+                }]
+            }, {
+                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'file-loader?mimetype=image/svg+xml'
+            }, {
+                test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "file-loader?mimetype=application/font-woff"
+            }, {
+                test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "file-loader?mimetype=application/font-woff"
+            }, {
+                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "file-loader?mimetype=application/octet-stream"
+            }, {
+                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "file-loader"
+            }
+        ]
     }
 }
