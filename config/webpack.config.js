@@ -18,6 +18,10 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
     title: 'GOLF - REACT BOILERPLATE'
 });
 
+const Environment = new webpack.DefinePlugin({
+    'process.env.NODE_ENV': '"production"'
+});
+
 /**
  * OUTPUT
  * 
@@ -48,7 +52,7 @@ module.exports = {
             path.resolve('./src')
         ]
     },
-    plugins: [HtmlWebpackPluginConfig],
+    plugins: [HtmlWebpackPluginConfig, Environment],
     module: {
         rules: [
             {
@@ -59,6 +63,10 @@ module.exports = {
                 test: /\.jsx$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
+                
+            }, { 
+                test: /\.css$/, 
+                loader: "style-loader!css-loader" 
             }, {
                 test: /\.scss$/,
                 use: [{

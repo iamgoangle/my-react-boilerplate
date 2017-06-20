@@ -7,21 +7,20 @@ import { connect } from 'react-redux';
 
 // component imports
 
-// scss imports
-import calculator from './styles.scss';
+// scss module
+import styles from './styles.scss';
 
-class Calculator extends Component {
+class FxCalculator extends Component {
     constructor (props) {
         super(props);
         this.state = {};
-        console.log(calculator);
     }
     
     // mount
     render () {
         return (
-            <div className={calculator.red}>
-                test
+            <div className={styles.flexContainer}>
+                Forex
             </div>
         )
     }
@@ -30,14 +29,16 @@ class Calculator extends Component {
 
 const mapStateToProps = (state) => {
     return {
-
+        getDemoAction: state.fxCalculatorReducer
     }
-};
+}
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        setDemoAction: () => {
+            dispatch(getDemoAction());
+        }
     }
-};
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Calculator);
+export default connect(mapStateToProps, mapDispatchToProps)(FxCalculator);

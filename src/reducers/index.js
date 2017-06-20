@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import myReducer from './myReducer';
+
+import fxCalculatorReducer from './fxCalculatorReducer';
 
 const reducers = combineReducers({
-    myReducer
+    fxCalculatorReducer
 });
 
 export default reducers;

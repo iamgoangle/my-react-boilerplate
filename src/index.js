@@ -6,8 +6,16 @@ import { Provider } from 'react-redux';
 import store from './store/configureStore';
 import router from './router';
 
+
+// bootstrap
+import 'bootstrap/dist/css/bootstrap.css';
+import '../dist/public/assets/css/animate.css';
+import '../dist/public/assets/css/style.css';
+import '../dist/public/assets/css/colors/blue-dark.css';
+
 // root element
 const rootElement = document.getElementById('root');
+
 
 // render app component
 const renderMyApp = () => {

@@ -2,11 +2,11 @@
 import React, { Component, PropTypes } from 'react';
 
 // redux imports
-import { getDemoAction } from '../actions/myActions';
+import { getDemoAction } from '../actions/fxCalculatorActions';
 import { connect } from 'react-redux';
 
 // component imports
-import Calculator from './Calculator';
+import FxCalculator from './FxCalculator';
 
 class App extends Component {
     constructor (props) {
@@ -19,24 +19,11 @@ class App extends Component {
 
     render() {
         return (
-            <Calculator></Calculator>
+            <div>
+                Home
+            </div>
         )
     }
 }
 
-const mapStateToProps = (state) => {
-    console.log(state);
-    return {
-        getDemoAction: state.myReducer.testReducer
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        setDemoAction: () => {
-            dispatch(getDemoAction());
-        }
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect()(App);
