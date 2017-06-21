@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "bootstrap-sass-loader": "^1.0.10",
     "css-loader": "^0.28.1",
     "es6-promise": "^4.1.0",
     "history": "^4.6.1",

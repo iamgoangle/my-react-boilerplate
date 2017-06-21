@@ -22,6 +22,11 @@ const Environment = new webpack.DefinePlugin({
     'process.env.NODE_ENV': '"production"'
 });
 
+const jQuery = new webpack.ProvidePlugin({
+    $: "jquery",
+    jQuery: "jquery"
+});
+
 /**
  * OUTPUT
  * 
@@ -52,7 +57,7 @@ module.exports = {
             path.resolve('./src')
         ]
     },
-    plugins: [HtmlWebpackPluginConfig, Environment],
+    plugins: [HtmlWebpackPluginConfig, Environment, jQuery],
     module: {
         rules: [
             {
