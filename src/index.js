@@ -14,13 +14,24 @@ import '../dist/public/assets/css/animate.css';
 import '../dist/public/assets/css/style.css';
 import '../dist/public/assets/css/colors/blue-dark.css';
 
-// third-party plugin
-window.jQuery = window.$ =  require('jquery/dist/jquery.min');
+// jQuery
+import $ from 'jquery';
+window.$ = $;
+window.jQuery = jQuery;
+
+// bootstrap
 import 'bootstrap/dist/js/bootstrap.min.js';
+// side nav
+import './utils/bower_components/sidebar-nav/dist/sidebar-nav.min';
+// js slim scroll
+import './utils/jquery.slimscroll';
+// wave effect
+import './utils/waves';
+// custom theme templates
+require('./utils/custom');
 
 // root element
 const rootElement = document.getElementById('root');
-
 
 // render app component
 const renderMyApp = () => {
